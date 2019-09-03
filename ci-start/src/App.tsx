@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 const App: React.FC = () => {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -19,14 +18,15 @@ const App: React.FC = () => {
     setName("");
     setEmail("");
     setMessage("");
-  }
+  };
 
   return (
     <div className="container">
       <section>
-        <h3 className="title">Hi, there!</h3>
+        <h3 className="title">Hi</h3>
         <form onSubmit={submitForm}>
-          <input type="text"
+          <input
+            type="text"
             name="name"
             id="name"
             value={name}
@@ -34,15 +34,18 @@ const App: React.FC = () => {
             placeholder="Name"
             className="form-field"
             required
-            autoFocus />
-          <input type="email"
+            autoFocus
+          />
+          <input
+            type="email"
             name="email"
             id="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="Email"
             className="form-field"
-            required />
+            required
+          />
           <textarea
             name="message"
             id="message"
@@ -51,13 +54,13 @@ const App: React.FC = () => {
             placeholder="Message"
             rows={4}
             className="form-field"
-            required>
-          </textarea>
+            required
+          ></textarea>
           <input type="submit" value="Send Message" className="btn"></input>
         </form>
       </section>
     </div>
   );
-}
+};
 
 export default App;
